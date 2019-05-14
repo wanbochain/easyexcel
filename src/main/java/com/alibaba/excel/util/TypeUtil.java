@@ -72,12 +72,13 @@ public class TypeUtil {
                 return Long.parseLong(value);
             }
             if (Date.class.equals(field.getType())) {
-                if (value.contains("-") || value.contains("/") || value.contains(":")) {
+
+//                if (value.contains("-") || value.contains("/") || value.contains(":")) {
                     return getSimpleDateFormatDate(value, format);
-                } else {
-                    Double d = Double.parseDouble(value);
-                    return HSSFDateUtil.getJavaDate(d, us);
-                }
+//                } else {
+//                    Double d = Double.parseDouble(value);
+//                    return HSSFDateUtil.getJavaDate(d, us);
+//                }
             }
             if (BigDecimal.class.equals(field.getType())) {
                 return new BigDecimal(value);
